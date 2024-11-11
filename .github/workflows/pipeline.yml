@@ -2,21 +2,21 @@ name: Test Calculator
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "master" ]
-    
+    branches: ["main"]
+
 jobs:
   test:
-    runs-on: ubuntu-latest  # Replace with desired runner OS (e.g., macOS, Windows)
+    runs-on: ubuntu-latest # Replace with desired runner OS (e.g., macOS, Windows)
 
     steps:
-      - uses: actions/checkout@v2  # Check out the repository code
+      - uses: actions/checkout@v2 # Check out the repository code
 
       - name: Set up Python environment
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x  # Replace with your Python version (adjust if needed)
+          python-version: 3.x # Replace with your Python version (adjust if needed)
 
       - name: Install dependencies
         run: |
@@ -25,7 +25,6 @@ jobs:
       - name: Run tests
         run: |
           python -m unittest test.py  # Replace with your test execution command (e.g., pytest)
-
 
   deploy:
     needs: test
@@ -37,4 +36,4 @@ jobs:
 
       - name: Deploy Application
         run: |
-          echo "Deploying the application..." # Replace this with actual deployment commands 
+          echo "Deploying the application..." # Replace this with actual deployment commands
