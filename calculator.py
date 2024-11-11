@@ -2,4 +2,4 @@
 
 class Areacircle:
     def area(self, r):
-        return r*2*3.14
+        return (r**2)*3.14
